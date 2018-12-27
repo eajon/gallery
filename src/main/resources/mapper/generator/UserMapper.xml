@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.no7player.mapper.generator.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.no7player.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="sexdesc" jdbcType="VARCHAR" property="sexdesc" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="head_img_url" jdbcType="VARCHAR" property="headImgUrl" />
+    <result column="unionid" jdbcType="VARCHAR" property="unionid" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+</mapper>
