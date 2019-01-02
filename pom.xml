@@ -16,22 +16,25 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.mybatis>1.3.1</version.mybatis>
+        <version.mybatis>1.3.2</version.mybatis>
         <version.tkmybatis>1.2.4</version.tkmybatis>
         <version.pagehelper>1.2.3</version.pagehelper>
         <version.druid>1.1.10</version.druid>
-        <version.fastjson>1.1.43</version.fastjson>
+        <version.fastjson>1.2.51</version.fastjson>
         <version.swagger2>1.8.0.RELEASE</version.swagger2>
         <version.log4j>1.2.17</version.log4j>
-        <version.aspectj>1.8.7</version.aspectj>
         <version.jwt>3.2.0</version.jwt>
         <version.shiro>1.4.0</version.shiro>
-        <version.shirothymeleaf>2.0.0</version.shirothymeleaf>
         <version.reactor>2.0.8.RELEASE</version.reactor>
+        <version.caffeine>2.6.2</version.caffeine>
+        <version.gson>2.8.5</version.gson>
+        <version.aliyunoss>2.4.0</version.aliyunoss>
+        <version.commons-lang3>3.8.1</version.commons-lang3>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
+        <!--base-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -59,19 +62,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
         <dependency>
@@ -79,19 +69,17 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--mysql-->
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-
-
         <!--mybatis-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -110,78 +98,65 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>${version.pagehelper}</version>
         </dependency>
-
-
-
+        <!--fastjson-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${version.fastjson}</version>
         </dependency>
+        <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>${version.druid}</version>
         </dependency>
+        <!--swagger-->
         <dependency>
             <groupId>com.spring4all</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
             <version>${version.swagger2}</version>
         </dependency>
-
         <!-- log4j -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${version.log4j}</version>
         </dependency>
-
-
         <!-- shiro权限管理 -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>${version.shiro}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.github.theborakompanioni</groupId>
-            <artifactId>thymeleaf-extras-shiro</artifactId>
-            <version>${version.shirothymeleaf}</version>
-        </dependency>
-
         <!-- jwt -->
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
             <version>${version.jwt}</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${version.caffeine}</version>
+        </dependency>
+        <!-- gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.8.5</version>
+            <version>${version.gson}</version>
         </dependency>
-
-
-
+        <!-- commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>${version.commons-lang3}</version>
         </dependency>
-
+        <!-- aliyunoss -->
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
-            <version>2.4.0</version>
+            <version>${version.aliyunoss}</version>
         </dependency>
-
-
-
-
-
     </dependencies>
 
 
