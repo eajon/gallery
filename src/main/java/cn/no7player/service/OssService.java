@@ -6,10 +6,10 @@ import com.aliyun.oss.model.*;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.client.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.util.DateUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -172,7 +172,7 @@ public class OssService {
         //生成uuid,替换 - 的目的是因为后期可能会用 - 将key进行split，然后进行分类统计
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         //文件路径
-        String path = DateUtils.format(new Date(), "yyyyMMdd", Locale.CHINA) + "-" + uuid;
+        String path = DateUtils.formatDate(new Date(), "yyyyMMdd") + "-" + uuid;
 
         if (StringUtils.isNotBlank(fileHost)) {
             path = fileHost + "-" + path;

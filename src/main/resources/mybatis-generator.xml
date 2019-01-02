@@ -23,7 +23,7 @@
         </commentGenerator>
 
         <!--数据库链接地址账号密码，这里由于我使用的是根据开发和生产分离的配置文件，所以这里直接写上了-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://172.17.12.207:3306/contract?useUnicode=true&amp;characterEncoding=utf-8"
                         userId="root"
                         password="123456a">

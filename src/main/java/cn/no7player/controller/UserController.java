@@ -53,34 +53,6 @@ public class UserController {
         }
     }
 
-    @GetMapping("/article")
-    public ResponseBean article() {
-        Subject subject = SecurityUtils.getSubject();
-        //是否已经登陆
-        if (subject.isAuthenticated()) {
-            return new ResponseBean(200, "You are already logged in", null);
-        } else {
-            return new ResponseBean(200, "You are guest", null);
-        }
-    }
-
-    @GetMapping("/require_auth")
-    @RequiresAuthentication
-    public ResponseBean requireAuth() {
-        return new ResponseBean(200, "You are authenticated", null);
-    }
-
-    @GetMapping("/require_role")
-    @RequiresRoles("admin")
-    public ResponseBean requireRole() {
-        return new ResponseBean(200, "You are visiting require_role", null);
-    }
-
-    @GetMapping("/require_permission")
-    @RequiresPermissions(logical = Logical.AND, value = {"post_edit", "post_update"})
-    public ResponseBean requirePermission() {
-        return new ResponseBean(200, "You are visiting permission require edit,view", null);
-    }
 
     @RequestMapping(path = "/401")
     @ResponseStatus(HttpStatus.UNAUTHORIZED)

@@ -1,6 +1,5 @@
 package cn.no7player.config;
 
-import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import cn.no7player.jwt.JWTFilter;
 import cn.no7player.util.MyShiroRealm;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
@@ -14,9 +13,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.Filter;
 
 
 @Configuration
@@ -58,7 +57,9 @@ public class ShiroConfig {
          * http://shiro.apache.org/web.html#urls-
          */
         Map<String, String> filterRuleMap = new HashMap<>();
-        filterRuleMap.put("/addUser", "anon");
+        // 访问401和404页面不通过我们的Filter
+        filterRuleMap.put("/401", "anon");
+        filterRuleMap.put("/error", "anon");
         filterRuleMap.put("/druid", "anon");
         filterRuleMap.put("/swagger-ui.html", "anon");
         filterRuleMap.put("/swagger-resources", "anon");
@@ -69,9 +70,6 @@ public class ShiroConfig {
         filterRuleMap.put("/login", "anon");
         filterRuleMap.put("/folder/**", "jwt");
         filterRuleMap.put("/image/**", "jwt");
-        // 访问401和404页面不通过我们的Filter
-        filterRuleMap.put("/401", "anon");
-
 
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
@@ -102,15 +100,7 @@ public class ShiroConfig {
         return advisor;
     }
 
-    /**
-     * 添加ShiroDialect 为了在thymeleaf里使用shiro的标签的bean
-     *
-     * @return
-     */
-    @Bean(name = "shiroDialect")
-    public ShiroDialect shiroDialect() {
-        return new ShiroDialect();
-    }
+
 
 
 }
