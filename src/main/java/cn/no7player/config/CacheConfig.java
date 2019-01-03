@@ -140,8 +140,9 @@ public class CacheConfig extends CachingConfigurerSupport {
                     .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(valueSerializer()))
                     .disableCachingNullValues();     // 不缓存空值
 
-            ParserConfig.getGlobalInstance().addAccept("cn.csfz.gemi.");
-
+            //增加白名单
+            ParserConfig.getGlobalInstance().addAccept("cn.no7player.");
+            ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
             // 对每个缓存空间应用不同的配置
             Map<String, RedisCacheConfiguration> configMap = Maps.newHashMap();
             Map<String, Long> redisCachesMap = RedisCaches.mapValues();
