@@ -12,7 +12,7 @@
     "http-proxy-middleware": "^0.19.1",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "vant": "^1.5.0-beta2",
+    "vant": "^2.1.8",
     "vue": "^2.5.21",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.1",
