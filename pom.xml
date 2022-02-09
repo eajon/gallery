@@ -24,7 +24,7 @@
         <version.swagger2>1.8.0.RELEASE</version.swagger2>
         <version.log4j>1.2.17</version.log4j>
         <version.jwt>3.2.0</version.jwt>
-        <version.shiro>1.4.0</version.shiro>
+        <version.shiro>1.7.1</version.shiro>
         <version.reactor>2.0.8.RELEASE</version.reactor>
         <version.caffeine>2.6.2</version.caffeine>
         <version.gson>2.8.5</version.gson>
