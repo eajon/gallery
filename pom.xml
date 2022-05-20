@@ -27,7 +27,7 @@
         <version.shiro>1.4.0</version.shiro>
         <version.reactor>2.0.8.RELEASE</version.reactor>
         <version.caffeine>2.6.2</version.caffeine>
-        <version.gson>2.8.5</version.gson>
+        <version.gson>2.8.9</version.gson>
         <version.aliyunoss>2.4.0</version.aliyunoss>
         <version.commons-lang3>3.8.1</version.commons-lang3>
         <java.version>1.8</java.version>
