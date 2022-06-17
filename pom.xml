@@ -20,7 +20,7 @@
         <version.tkmybatis>1.2.4</version.tkmybatis>
         <version.pagehelper>1.2.3</version.pagehelper>
         <version.druid>1.1.10</version.druid>
-        <version.fastjson>1.2.51</version.fastjson>
+        <version.fastjson>1.2.83</version.fastjson>
         <version.swagger2>1.8.0.RELEASE</version.swagger2>
         <version.log4j>1.2.17</version.log4j>
         <version.jwt>3.2.0</version.jwt>
